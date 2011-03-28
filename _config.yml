@@ -1,3 +1,4 @@
+safe: true
 auto: true
 permalink: pretty
 paginate: 5
