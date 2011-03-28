@@ -1,4 +1,7 @@
 safe: true
 auto: true
 permalink: pretty
-paginate: 5
+paginate: 1
+exclude: 
+  -Rakefile
+  -README

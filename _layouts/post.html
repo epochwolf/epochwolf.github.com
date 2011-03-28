@@ -1,8 +1,25 @@
 ---
 layout: default
 ---
-  <div id="container" class="entry-content">
+  <div id="container" class="post">
     <h2>{{ page.title }}</h2>
-    <span>Published: {{ page.date }}</span>
-    {{ content }}
+    <div class="published">Published: {{ page.date | date: "%a %b %e, %Y" }}</div>
+    {% unless page.categories == empty %}
+      <div class="categories">
+        In: {{page.categories |  join: ', '}}
+      </div>
+    {% endunless %}
+    <div class="content">
+      {{ content }}
+    </div>
+    <div class="next_prev">
+      {% if page.previous %}
+        <span class="prev"><a href="{{page.previous.url}}">{{page.previous.title}}</a> »</span>
+      {% endif %}
+      {% if page.next %}
+        <span class="next">« <a href="{{page.next.url}}">{{page.next.title}}</a></span>
+      {% endif %}
+    </div>
+    <div class="comments">
+    </div>
   </div>
